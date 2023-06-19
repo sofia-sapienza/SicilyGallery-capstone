@@ -1,1 +1,23 @@
-<p>play works!</p>
+<div *ngFor="let esperienza of esperienze">
+<h2>{{esperienza.titolo}}</h2>
+<p>{{esperienza.descrizione}}</p>
+<img src="{{esperienza.immagine}}" style="width: 100px;">
+<button (click)="eliminaEsperienza(esperienza.id)">Elimina</button>
+</div>
+
+<form (ngSubmit)="addEsperienza()">
+  <div>
+    <label for="titolo">Titolo</label>
+    <input type="text" id="titolo" name="titolo" [(ngModel)]="esperienza.titolo" required>
+  </div>
+  <div>
+    <label for="descrizione">Descrizione</label>
+    <textarea id="descrizione" name="descrizione" [(ngModel)]="esperienza.descrizione" required></textarea>
+  </div>
+  <div>
+    <label for="immagine">Immagine</label>
+    <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required>
+  </div>
+  <button type="submit">Aggiungi Esperienza</button>
+</form>
+

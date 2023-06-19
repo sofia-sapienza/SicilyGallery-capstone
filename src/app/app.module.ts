@@ -8,7 +8,12 @@ import { HomeComponent } from './components/home/home.component';
 import { EatComponent } from './components/eat/eat.component';
 import { PlayComponent } from './components/play/play.component';
 import { RelaxComponent } from './components/relax/relax.component';
-import {Route, RouterModule} from '@angular/router'; // importo il modulo {Route, RouterModule} per gestire le rotte
+import { LoginComponent } from './auth/login/login.component';
+import {Route, RouterModule} from '@angular/router';
+import { RegisterComponent } from './auth/register/register.component'; // importo il modulo {Route, RouterModule} per gestire le rotte
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Route[] = [ //creo una costante di :tipo Route per definire le rotte
@@ -37,12 +42,16 @@ const routes: Route[] = [ //creo una costante di :tipo Route per definire le rot
     HomeComponent,
     EatComponent,
     PlayComponent,
-    RelaxComponent
+    RelaxComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot(routes) // dichiaro negli imports che sto utilizzando il RouterModule
+    RouterModule.forRoot(routes), // dichiaro negli imports che sto utilizzando il RouterModule
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
