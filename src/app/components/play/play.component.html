@@ -1,10 +1,21 @@
 <div *ngFor="let esperienza of esperienze">
-<h2>{{esperienza.titolo}}</h2>
-<p>{{esperienza.descrizione}}</p>
-<img src="{{esperienza.immagine}}" style="width: 100px;">
-<button (click)="eliminaEsperienza(esperienza.id)">Elimina</button>
+  <h2>{{esperienza.titolo}}</h2>
+  <!-- QUESTO APPARE SOLO IN MODALITÀ MODIFICA! -->
+  <div *ngIf="modifica===esperienza.key">
+    <input [(ngModel)]="esperienza.titolo">
+    <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null">Salva modifica</button>
+  </div>
+  <!-- fino a qui ⬆️ -->
+  <p>{{esperienza.descrizione}}</p>
+  <img src="{{esperienza.immagine}}" style="width: 100px;">
+  <!-- bottone elimina ⬇️ -->
+  <button (click)="eliminaEsperienza(esperienza.key)">Elimina</button>
+  <!-- bottone modifica ⬇️ -->
+  <button *ngIf="modifica != esperienza.key" (click)="modifica=esperienza.key">Modifica</button>
 </div>
 
+
+<!-- FORM -->
 <form (ngSubmit)="addEsperienza()">
   <div>
     <label for="titolo">Titolo</label>
@@ -20,4 +31,3 @@
   </div>
   <button type="submit">Aggiungi Esperienza</button>
 </form>
-

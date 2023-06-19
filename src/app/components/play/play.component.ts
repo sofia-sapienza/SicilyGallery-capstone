@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireDatabase} from '@angular/fire/compat/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database'; // importo il database che ho su Firebase
+import { Interface } from 'src/app/interface.interface'; // importo l'interfaccia
 
 @Component({
   selector: 'app-play',
@@ -7,55 +8,74 @@ import {AngularFireDatabase} from '@angular/fire/compat/database';
   styleUrls: ['./play.component.scss'],
 })
 export class PlayComponent implements OnInit {
+  esperienze!: any[];
 
-  esperienze!: any[]
-  constructor(private firedatabase: AngularFireDatabase) {
+  constructor(private firedatabase: AngularFireDatabase) {}
 
-  }
   esperienza = {
+    key: '',
     titolo: '',
     descrizione: '',
     immagine: '',
-  }
+  };
 
-
+  modifica: string | null = null;
 
   ngOnInit(): void {
-
-    this.firedatabase.list('esperienze').valueChanges().subscribe((data) => {
-      this.esperienze = data;
-    });
+    this.firedatabase
+      .list('esperienze')
+      .valueChanges()
+      .subscribe((data) => {
+        this.esperienze = data;
+      });
   }
 
-  addEsperienza(): void{
-    const esperienze = this.firedatabase.list('esperienze').push(this.esperienza) // .list mi recupera l'array esperienze
-    .then(() => {
-      console.log('esperienza aggiunta con successo', this.esperienza);
-      this.resetForm();
-    })
-    .catch((error) => {
-      console.error('esperienza non aggiunta con successo', error);
+  // METODO AGGIUNGI ESPERIENZA
+  addEsperienza(): void {
+    const ref = this.firedatabase.list('esperienze').push(this.esperienza);
+    ref
+      .then((item) => {
+        // Assicuriamoci che la chiave sia stata generata
+        if (item.key !== null) {
+          // Aggiungi la chiave all'oggetto
+          this.esperienza.key = item.key;
+          // Aggiorna l'oggetto nel database con la nuova chiave
+          item.update(this.esperienza).then(() => {
+            console.log('esperienza aggiunta con successo', this.esperienza);
+            this.resetForm();
+          });
+        }
+      })
+      .catch((error) => {
+        console.error('esperienza non aggiunta con successo', error);
+      });
+  }
 
-  })
+  // METODO ELIMINA ESPERIENZA
+  modificaEsperienza(key: string, esperienzaModificata: Interface) {
+    return this.firedatabase
+      .object(`esperienze/${key}`)
+      .update(esperienzaModificata)
+      .then(() => {
+        console.log('esperienza modificata con successo', esperienzaModificata);
+      })
+      .catch((error) => {
+        console.error('esperienza non modificata con successo', error);
+      });
+  }
 
-}
+  // METODO ELIMINA ESPERIENZA
+  eliminaEsperienza(key: string) {
+    return this.firedatabase.object(`esperienze/${key}`).remove();
+  }
 
-eliminaEsperienza(key: string) :void {
-  const esperienze = this.firedatabase.object(`firedatabase/${key}`);
-  esperienze.remove()
-  .then(() => {
-    console.log('esperienza eliminata con successo', key);
-  })
-  .catch((error) => {
-    console.error('esperienza non eliminata con successo', error);
-  });
-}
-
+  // METODO CHE SVUOTA IL FORM
   resetForm(): void {
     this.esperienza = {
+      key: '',
       titolo: '',
       descrizione: '',
       immagine: '',
-    }
+    };
   }
 }
