@@ -51,7 +51,7 @@ export class PlayComponent implements OnInit {
       });
   }
 
-  // METODO ELIMINA ESPERIENZA
+  // METODO MODIFICA ESPERIENZA
   modificaEsperienza(key: string, esperienzaModificata: Interface) {
     return this.firedatabase
       .object(`esperienze/${key}`)
