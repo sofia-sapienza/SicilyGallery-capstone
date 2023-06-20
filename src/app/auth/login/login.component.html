@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="container-fluid d-flex justify-content-center align-items-center">
+  <div class="container-login p-4">
+    <h2 class="text-white fw-semibold">Accedi</h2>
+    <!-- inizio form -->
+    <!-- email -->
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label text-light">Email</label>
+        <input type="email" class="form-control rounded-1" id="exampleInputEmail1" aria-describedby="emailHelp"
+          [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+      </div>
+      <!-- password -->
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label text-light">Password</label>
+        <input type="password" class="form-control rounded-1" id="exampleInputPassword1" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+      </div>
+      <button (click)="accedi()" type="submit" class="btn text-light rounded-1">Accedi</button>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label text-light" for="exampleCheck1">Ricordami</label>
+      </div>
+    </form>
+    <p class="text-white-50">Prima volta su Netflix?&nbsp;<a class="registrati"
+        [routerLink]="['/register']">Registrati</a></p>
+    <p class="text-white-50">Questa pagina è protetta da Google reCAPTCHA per garantire che tu non sia un bot.&nbsp;<a
+        href="Javascript:void(0)">Scopri di più</a></p>
+  </div>
+</div>
