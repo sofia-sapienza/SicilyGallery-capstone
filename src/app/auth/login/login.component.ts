@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     this.authSrv.login(this.email, this.password)
     .then(() => {
       console.log('Logged in successfully');
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     });
   }
 }

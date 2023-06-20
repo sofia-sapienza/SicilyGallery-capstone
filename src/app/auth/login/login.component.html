@@ -1,9 +1,9 @@
 <div class="container-fluid d-flex justify-content-center align-items-center">
   <div class="container-login p-4">
     <h2 class="text-white fw-semibold">Accedi</h2>
-    <!-- inizio form -->
-    <!-- email -->
+    <!-- INIZIO FORM -->
     <form>
+      <!-- email -->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label text-light">Email</label>
         <input type="email" class="form-control rounded-1" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -14,6 +14,7 @@
         <label for="exampleInputPassword1" class="form-label text-light">Password</label>
         <input type="password" class="form-control rounded-1" id="exampleInputPassword1" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
       </div>
+      <!-- bottone accedi -->
       <button (click)="accedi()" type="submit" class="btn text-light rounded-1">Accedi</button>
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">

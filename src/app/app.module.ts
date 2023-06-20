@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 
 const routes: Route[] = [ //creo una costante di :tipo Route per definire le rotte
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
   },
   {
