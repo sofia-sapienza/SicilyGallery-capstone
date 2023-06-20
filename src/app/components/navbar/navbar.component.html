@@ -22,14 +22,13 @@
           <a class="nav-link" [routerLink]="['/relax']">RELAX</a>
         </li>
       </ul>
+      <!-- Questo si dovrà vedere solo senza login ⬇️ -->
+      <i class="bi bi-person-circle icon-user me-2"></i>
+      <a class="btn btn-login" [routerLink]="['/login']" role="button">Login</a>
 
+      <!-- Questo si dovrà vedere solo dopo aver fatto il login ⬇️ -->
+      <!-- <i class="bi bi-person-circle icon-user me-2"></i>
+      <button (click)="logout()" class="btn btn-danger" type="submit">Logout</button> -->
     </div>
-    <!-- Questo si dovrà vedere solo senza login ⬇️ -->
-    <i class="bi bi-person-circle icon-user me-2"></i>
-    <a class="btn btn-login" [routerLink]="['/login']" role="button">Login</a>
-
-    <!-- Questo si dovrà vedere solo dopo aver fatto il login ⬇️ -->
-    <!-- <button (click)="logout()" class="btn btn-danger" type="submit">Logout</button> -->
-
   </div>
 </nav>
