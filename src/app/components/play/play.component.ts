@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database'; // importo il database che ho su Firebase
-import { Interface } from 'src/app/interface.interface'; // importo l'interfaccia
+import { Experience } from 'src/app/models/experience.interface'; // importo l'interfaccia
 
 @Component({
   selector: 'app-play',
@@ -14,9 +14,11 @@ export class PlayComponent implements OnInit {
 
   esperienza = {
     key: '',
-    titolo: '',
-    descrizione: '',
     immagine: '',
+    titolo: '',
+    sottotitolo: '',
+    descrizione: '',
+    prezzo: '',
   };
 
   modifica: string | null = null;
@@ -52,7 +54,7 @@ export class PlayComponent implements OnInit {
   }
 
   // METODO MODIFICA ESPERIENZA
-  modificaEsperienza(key: string, esperienzaModificata: Interface) {
+  modificaEsperienza(key: string, esperienzaModificata: Experience) {
     return this.firedatabase
       .object(`esperienze/${key}`)
       .update(esperienzaModificata)
@@ -73,9 +75,11 @@ export class PlayComponent implements OnInit {
   resetForm(): void {
     this.esperienza = {
       key: '',
-      titolo: '',
-      descrizione: '',
       immagine: '',
+      titolo: '',
+      sottotitolo: '',
+      descrizione: '',
+      prezzo: '',
     };
   }
 }

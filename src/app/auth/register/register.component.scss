@@ -4,9 +4,8 @@
   background-size: cover;
   }
 
-  .container-login{
+  .container-register{
   background-color: rgba(0, 0, 0, 0.708);
-  width: 25%;
   }
 
 .btn{
@@ -18,4 +17,18 @@
 .registrati{
   color: white;
   text-decoration: none;
+}
+
+
+// MEDIA QUERY
+@media screen and (max-width: 1024px) { //al di sotto di
+  .container-register {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1023px) { //al di sopra di
+  .container-register {
+    width: 40%;
+  }
 }

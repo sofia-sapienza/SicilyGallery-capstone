@@ -1,33 +1,67 @@
-<div *ngFor="let esperienza of esperienze">
-  <h2>{{esperienza.titolo}}</h2>
-  <!-- QUESTO APPARE SOLO IN MODALITÀ MODIFICA! -->
-  <div *ngIf="modifica===esperienza.key">
-    <input [(ngModel)]="esperienza.titolo">
-    <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null">Salva modifica</button>
+<!-- TABELLA AGGIUNGI ESPERIENZE -->
+<!-- apparirà solo un modalità admin -->
+<div class="container-fluid pb-2 border-bottom">
+  <div class="row">
+    <div class="col">
+      <p><b>Immagine</b></p>
+      <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required>
+    </div>
+    <div class="col">
+      <p><b>Titolo</b></p>
+      <input type="text" id="titolo" name="titolo" [(ngModel)]="esperienza.titolo" required>
+    </div>
+    <div class="col">
+      <p><b>Sottotitolo</b></p>
+      <input type="text" id="sottotitolo" name="sottotitolo" [(ngModel)]="esperienza.sottotitolo" required>
+    </div>
+    <div class="col">
+      <p><b>Descrizione</b></p>
+      <input type="text" id="descrizione" name="descrizione" [(ngModel)]="esperienza.descrizione" required>
+    </div>
+    <div class="col">
+      <p><b>Prezzo</b></p>
+      <input type="number" id="prezzo" name="prezzo" [(ngModel)]="esperienza.prezzo" required>
+    </div>
+    <div class="col d-flex align-items-end">
+      <button (click)="addEsperienza()" type="button" class="btn btn-sm text-light btn-addEsperienza">Aggiungi Esperienza</button>
+    </div>
   </div>
-  <!-- fino a qui ⬆️ -->
-  <p>{{esperienza.descrizione}}</p>
-  <img src="{{esperienza.immagine}}" style="width: 100px;">
-  <!-- bottone elimina ⬇️ -->
-  <button (click)="eliminaEsperienza(esperienza.key)">Elimina</button>
-  <!-- bottone modifica ⬇️ -->
-  <button *ngIf="modifica != esperienza.key" (click)="modifica=esperienza.key">Modifica</button>
 </div>
 
+<!-- ESCURSIONI -->
 
-<!-- FORM -->
-<form (ngSubmit)="addEsperienza()">
-  <div>
-    <label for="titolo">Titolo</label>
-    <input type="text" id="titolo" name="titolo" [(ngModel)]="esperienza.titolo" required>
+<!-- <div *ngFor="let esperienza of esperienze">
+  <h2>{{esperienza.titolo}}</h2> -->
+  <!-- QUESTO APPARE SOLO IN MODALITÀ MODIFICA! -->
+  <!-- <div *ngIf="modifica===esperienza.key">
+    <input [(ngModel)]="esperienza.titolo">
+    <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null">Salva modifica</button>
+  </div> -->
+  <!-- fino a qui ⬆️ -->
+ <!--  <p>{{esperienza.descrizione}}</p>
+  <img src="{{esperienza.immagine}}" style="width: 100px;"> -->
+  <!-- bottone elimina ⬇️ -->
+ <!--  <button (click)="eliminaEsperienza(esperienza.key)">Elimina</button> -->
+  <!-- bottone modifica ⬇️ -->
+<!--   <button *ngIf="modifica != esperienza.key" (click)="modifica=esperienza.key">Modifica</button>
+</div>
+ -->
+
+<div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let esperienza of esperienze">
+      <!-- inizio card -->
+      <div class="card h-100">
+        <img src="{{esperienza.immagine}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p>{{esperienza.sottotitolo}}</p>
+          <h5 class="card-title">{{esperienza.titolo}}</h5>
+          <p class="card-text">{{esperienza.descrizione}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <!-- fine card ⬆️ -->
   </div>
-  <div>
-    <label for="descrizione">Descrizione</label>
-    <textarea id="descrizione" name="descrizione" [(ngModel)]="esperienza.descrizione" required></textarea>
-  </div>
-  <div>
-    <label for="immagine">Immagine</label>
-    <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required>
-  </div>
-  <button type="submit">Aggiungi Esperienza</button>
-</form>
+</div>
+
