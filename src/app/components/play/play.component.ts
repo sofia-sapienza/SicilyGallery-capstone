@@ -9,6 +9,7 @@ import { EsperienzeService } from 'src/app/service/esperienze.service';
 })
 export class PlayComponent implements OnInit {
   esperienze!: any[];
+  esperienzeFiltrate: Experience[] = []; // inizializzo una variabile ti tipo: Interfaccia che mi riempirò con le esperienze filtrate
 
   constructor(private esperienzeSrv : EsperienzeService) {}
 
@@ -28,6 +29,7 @@ export class PlayComponent implements OnInit {
   ngOnInit(): void {
       this.esperienzeSrv.getEsperienze().subscribe((data) => {
         this.esperienze = data;
+        this.esperienzeFiltrate = [...this.esperienze]; // Inizialemente mostra tutte le esperienze non fitrate
       })
   }
 
@@ -42,6 +44,14 @@ export class PlayComponent implements OnInit {
         console.error('esperienza non aggiunta con successo', error);
       });
   }
+
+  //METODO PER FILTRARE LE ESPERIENZE IN BASE AL GENERE (eat, play, relax)
+ /*  filterEsperienze(genere: string): void {
+    this.esperienzeFiltrate = this.esperienze.filter((esperienza) => {
+      return esperienza.genere.toLowerCase() === genere.toLowerCase();
+    });
+  } */
+
 
   // METODO MODIFICA ESPERIENZA
   modificaEsperienza(key: string, esperienzaModificata: Experience): void {
