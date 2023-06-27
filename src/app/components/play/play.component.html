@@ -2,27 +2,35 @@
 <!-- apparirà solo un modalità admin -->
 <div class="container-fluid pb-2 border-bottom">
   <div class="row">
-    <div class="col">
-      <p><b>Immagine</b></p>
-      <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required />
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Immagine</b></p>
+        <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required />
     </div>
-    <div class="col">
-      <p><b>Titolo</b></p>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Titolo</b></p>
       <input type="text" id="titolo" name="titolo" [(ngModel)]="esperienza.titolo" required />
     </div>
-    <div class="col">
-      <p><b>Sottotitolo</b></p>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Sottotitolo</b></p>
       <input type="text" id="sottotitolo" name="sottotitolo" [(ngModel)]="esperienza.sottotitolo" required />
     </div>
-    <div class="col">
-      <p><b>Descrizione</b></p>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Descrizione</b></p>
       <input type="text" id="descrizione" name="descrizione" [(ngModel)]="esperienza.descrizione" required />
     </div>
-    <div class="col">
-      <p><b>Prezzo</b></p>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Genere</b></p>
+      <input type="text" id="genere" name="genere" [(ngModel)]="esperienza.genere" required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Approfondimenti</b></p>
+      <input type="text" id="approfondimenti" name="approfondimenti" [(ngModel)]="esperienza.approfondimenti" required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Prezzo</b></p>
       <input type="number" id="prezzo" name="prezzo" [(ngModel)]="esperienza.prezzo" required />
     </div>
-    <div class="col d-flex align-items-end">
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2 d-flex align-items-end">
       <button (click)="addEsperienza()" type="button" class="btn btn-sm text-light btn-addEsperienza">
         Aggiungi Esperienza
       </button>
@@ -39,7 +47,7 @@
         <div class="position-relative">
           <!-- ⚙️modalità modifica per il Immagine -->
           <ng-container *ngIf="modifica===esperienza.key; else Immagine">
-            <input [(ngModel)]="esperienza.immagine" class="ms-3">
+            <input [(ngModel)]="esperienza.immagine" class="ms-3 mb-1">
           </ng-container>
           <!-- fino a qui ↖️ -->
           <ng-template #Immagine>
@@ -48,7 +56,7 @@
 
           <!-- ⚙️modalità modifica per il Prezzo -->
           <ng-container *ngIf="modifica===esperienza.key; else Prezzo">
-            <input [(ngModel)]="esperienza.prezzo" class="ms-3">
+            <input type="number" [(ngModel)]="esperienza.prezzo" class="ms-3">
           </ng-container>
           <!-- fino a qui ↖️ -->
 
@@ -65,7 +73,7 @@
         <div class="card-body">
           <!-- ⚙️modalità modifica per il Sottotitolo -->
           <ng-container *ngIf="modifica===esperienza.key; else Sottotitolo">
-            <input [(ngModel)]="esperienza.sottotitolo">
+            <input [(ngModel)]="esperienza.sottotitolo" class="mb-1">
           </ng-container>
           <!-- fino a qui ↖️ -->
           <ng-template #Sottotitolo>
@@ -74,18 +82,21 @@
 
           <!-- ⚙️modalità modifica per il Titolo -->
           <ng-container *ngIf="modifica===esperienza.key; else Titolo">
-            <input [(ngModel)]="esperienza.titolo">
+            <input [(ngModel)]="esperienza.titolo" class="mb-1">
           </ng-container>
           <!-- fino a qui ↖️ -->
           <ng-template #Titolo>
             <h5 class="card-title">{{ esperienza.titolo }}</h5>
           </ng-template>
 
-          <!-- ⚙️modalità modifica per la Descrizione -->
+          <!-- ⚙️modalità modifica per la Descrizione e Genere -->
           <ng-container *ngIf="modifica===esperienza.key; else Descrizione">
-            <input [(ngModel)]="esperienza.descrizione">
+            <input [(ngModel)]="esperienza.descrizione" class="mb-1">
+            <input [(ngModel)]="esperienza.genere" class="mb-1">
           </ng-container>
           <!-- fino a qui ↖️ -->
+
+
           <ng-template #Descrizione>
             <p class="card-text">{{ esperienza.descrizione }}</p>
           </ng-template>

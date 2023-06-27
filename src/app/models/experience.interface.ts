@@ -1,8 +1,10 @@
 export interface Experience {
-  key: '',
-  immagine: '',
-  titolo: '',
-  sottotitolo: '',
-  descrizione: '',
-  prezzo: number,
+  key: string;
+  genere: string;
+  immagine: string;
+  titolo: string;
+  sottotitolo: string;
+  descrizione: string;
+  prezzo: number;
+  approfondimenti : string;
 }

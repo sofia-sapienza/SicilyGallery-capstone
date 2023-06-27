@@ -14,6 +14,7 @@ import { RegisterComponent } from './auth/register/register.component'; // impor
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
+import { EsperienzeService } from './service/esperienze.service';
 
 
 const routes: Route[] = [ //creo una costante di :tipo Route per definire le rotte
@@ -61,7 +62,7 @@ const routes: Route[] = [ //creo una costante di :tipo Route per definire le rot
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule
   ],
-  providers: [],
+  providers: [EsperienzeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
