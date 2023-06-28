@@ -1,6 +1,23 @@
-.carosello{
-  height: 50%;
+.container-fluid{
+  width: 100%;
+  height: 30rem;
 }
+
+.carosello{
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item{
+  height: 30rem;
+}
+
+.carousel-item img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
 
 .btn-exsperience{
   width: 100px;

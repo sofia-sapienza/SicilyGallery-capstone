@@ -1,98 +1,63 @@
 <!-- INIZIO CAROSELLO -->
-<div id="carouselExampleCaptions" class="carousel slide container-fluid">
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-bs-target="#carouselExampleCaptions"
-      data-bs-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleCaptions"
-      data-bs-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleCaptions"
-      data-bs-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
+<div class="container-fluid p-0">
+  <div id="carouselExampleCaptions" class="carousel slide carosello">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../../assets/img/sicilygallery1.png" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="fw-bold">Benvenuti in Sicily Gallery</h5>
+          <p>scopri i luoghi più unici</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/img/photo3.png" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="fw-bold">Per rilassarti...</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/img/foto3.png" class="d-block w-100" alt="..." />
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="fw-bold">Per esplolare</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img
-        src="../../../assets/img/sicilygallery1.png"
-        class="d-block w-100"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="fw-bold">Welcome to Sicily Gallery</h5>
-        <p>quickly discover the best places</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="../../../assets/img/photo3.png"
-        class="d-block w-100"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="fw-bold">To relax</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="../../../assets/img/foto3.png"
-        class="d-block w-100"
-        alt="..."
-      />
-      <div class="carousel-caption d-none d-md-block">
-        <h5 class="fw-bold">To explore</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
-  </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleCaptions"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleCaptions"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
 <!-- FINE CAROSELLO ↖️ -->
 <div class="container-fluid pt-3">
   <div class="d-flex justify-content-evenly">
     <div class="d-flex flex-column  align-items-center">
-      <a [routerLink]="['/eat']" class="link-exsperience"><img src="../../../assets/img/iconaEat.png" class="btn-exsperience"/></a>
+      <a [routerLink]="['/eat']" class="link-exsperience"><img src="../../../assets/img/iconaEat.png"
+          class="btn-exsperience" /></a>
       <p>EAT</p>
     </div>
     <div class="d-flex flex-column  align-items-center">
-      <a [routerLink]="['/play']" class="link-exsperience"
-        ><img src="../../../assets/img/iconaPlay.png" class="btn-exsperience"
-      /></a>
+      <a [routerLink]="['/play']" class="link-exsperience"><img src="../../../assets/img/iconaPlay.png"
+          class="btn-exsperience" /></a>
       <p>PLAY</p>
     </div>
     <div class="d-flex flex-column  align-items-center">
-      <a [routerLink]="['/relax']" class="link-exsperience"
-        ><img src="../../../assets/img/iconRelax.png" class="btn-exsperience"
-      /></a>
+      <a [routerLink]="['/relax']" class="link-exsperience"><img src="../../../assets/img/iconRelax.png"
+          class="btn-exsperience" /></a>
       <p>RELAX</p>
     </div>
   </div>
