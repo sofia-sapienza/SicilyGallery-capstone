@@ -29,7 +29,7 @@ export class PlayComponent implements OnInit {
   ngOnInit(): void {
       this.esperienzeSrv.getEsperienze().subscribe((data) => {
         this.esperienze = data;
-        this.esperienzeFiltrate = [...this.esperienze]; // Inizialemente mostra tutte le esperienze non fitrate
+        this.filtraEsperienze();
       })
   }
 
@@ -45,12 +45,14 @@ export class PlayComponent implements OnInit {
       });
   }
 
-  //METODO PER FILTRARE LE ESPERIENZE IN BASE AL GENERE (eat, play, relax)
- /*  filterEsperienze(genere: string): void {
-    this.esperienzeFiltrate = this.esperienze.filter((esperienza) => {
-      return esperienza.genere.toLowerCase() === genere.toLowerCase();
-    });
-  } */
+  //METODO PER FILTRARE L'ESPERIENZA
+  filtraEsperienze(): void {
+    this.esperienzeFiltrate = this.esperienze.filter(
+      (esperienza: Experience) => {
+        return esperienza.genere === 'play';
+      }
+    );
+  }
 
 
   // METODO MODIFICA ESPERIENZA
