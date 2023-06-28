@@ -1,10 +1,10 @@
 <!-- TABELLA AGGIUNGI ESPERIENZE -->
 <!-- apparirà solo un modalità admin -->
-<div class="container-fluid p-0">
-  <div class="row pb-2 border-bottom">
+<div class="container-fluid pb-2 border-bottom">
+  <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Immagine</b></p>
-      <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required />
+        <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required />
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Titolo</b></p>
@@ -24,8 +24,7 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Approfondimenti</b></p>
-      <input type="text" id="approfondimenti" name="approfondimenti" [(ngModel)]="esperienza.approfondimenti"
-        required />
+      <input type="text" id="approfondimenti" name="approfondimenti" [(ngModel)]="esperienza.approfondimenti" required />
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Prezzo</b></p>
@@ -37,10 +36,12 @@
       </button>
     </div>
   </div>
+</div>
 
-  <!-- SPIAGGIE -->
-  <div class="container contenitore-video">
-    <video src="../../../assets/video/mare.mp4" class="object-fit-cover" autoplay loop></video>
+<!-- SPIAGGIE -->
+<div class="container-fluid mt-3 contenitore-video">
+  <video src="../../../assets/video/relax.mp4" class="object-fit-cover" autoplay loop></video>
+  <div class="container-titolo">
+    <h1 class="text-light"><b>Spiaggie da sogno, calette ed acque turchesi, senza contare il mare degli aripelaghi</b></h1>
   </div>
-
 </div>
