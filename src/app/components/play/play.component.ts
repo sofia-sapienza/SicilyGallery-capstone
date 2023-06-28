@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/models/experience.interface'; // importo l'interfaccia
-import { EsperienzeService } from 'src/app/service/esperienze.service';
+import { EsperienzeService } from 'src/app/service/esperienze.service'; // importo il service
 
 @Component({
   selector: 'app-play',
@@ -10,8 +10,9 @@ import { EsperienzeService } from 'src/app/service/esperienze.service';
 export class PlayComponent implements OnInit {
   esperienze!: any[];
   esperienzeFiltrate: Experience[] = []; // inizializzo una variabile ti tipo: Interfaccia che mi riempirò con le esperienze filtrate
+  modifica: string | null = null; // variabile che ci serve per la modalità modifica
 
-  constructor(private esperienzeSrv : EsperienzeService) {}
+  constructor(private esperienzeSrv: EsperienzeService) {}
 
   esperienza = {
     key: '',
@@ -24,18 +25,17 @@ export class PlayComponent implements OnInit {
     approfondimenti: '',
   };
 
-  modifica: string | null = null;
-
   ngOnInit(): void {
-      this.esperienzeSrv.getEsperienze().subscribe((data) => {
-        this.esperienze = data;
-        this.filtraEsperienze();
-      })
+    this.esperienzeSrv.getEsperienze().subscribe((data) => {
+      this.esperienze = data;
+      this.filtraEsperienze();
+    });
   }
 
   // METODO AGGIUNGI ESPERIENZA
   addEsperienza(): void {
-    this.esperienzeSrv.addEsperienza(this.esperienza)
+    this.esperienzeSrv
+      .addEsperienza(this.esperienza)
       .then(() => {
         console.log('esperienza aggiunta con successo', this.esperienza);
         this.resetForm();
@@ -54,10 +54,10 @@ export class PlayComponent implements OnInit {
     );
   }
 
-
   // METODO MODIFICA ESPERIENZA
   modificaEsperienza(key: string, esperienzaModificata: Experience): void {
-    this.esperienzeSrv.modificaEsperienza(key, esperienzaModificata)
+    this.esperienzeSrv
+      .modificaEsperienza(key, esperienzaModificata)
       .then(() => {
         console.log('esperienza modificata con successo', esperienzaModificata);
       })
@@ -66,19 +66,17 @@ export class PlayComponent implements OnInit {
       });
   }
 
-
-
   // METODO ELIMINA ESPERIENZA
   eliminaEsperienza(key: string): void {
-    this.esperienzeSrv.eliminaEsperienza(key)
+    this.esperienzeSrv
+      .eliminaEsperienza(key)
       .then(() => {
         console.log('esperienza eliminata con successo');
       })
       .catch((error) => {
-        console.error('errore durante l\'eliminazione dell\'esperienza', error);
+        console.error("errore durante l'eliminazione dell'esperienza", error);
       });
   }
-
 
   // METODO CHE SVUOTA IL FORM
   resetForm(): void {
