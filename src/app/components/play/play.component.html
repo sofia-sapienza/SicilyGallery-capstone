@@ -45,59 +45,40 @@
       <!-- INIZIO CARD -->
       <div class="card h-100">
         <div class="position-relative">
-          <!-- ⚙️modalità modifica per il Immagine -->
-          <ng-container *ngIf="modifica===esperienza.key; else Immagine">
-            <input [(ngModel)]="esperienza.immagine" class="ms-3 mb-1">
-          </ng-container>
-          <!-- fino a qui ↖️ -->
-          <ng-template #Immagine>
-            <img src="{{ esperienza.immagine }}" class="card-img-top" alt="..." />
-          </ng-template>
 
-          <!-- ⚙️modalità modifica per il Prezzo -->
-          <ng-container *ngIf="modifica===esperienza.key; else Prezzo">
+          <!-- ⚙️modalità modifica per il Immagine e Prezzo -->
+          <ng-container *ngIf="modifica===esperienza.key; else immaginePrezzo">
+            <input [(ngModel)]="esperienza.immagine" class="ms-3 mb-1 mt-1">
             <input type="number" [(ngModel)]="esperienza.prezzo" class="ms-3">
           </ng-container>
           <!-- fino a qui ↖️ -->
+          <ng-template #immaginePrezzo>
+            <img src="{{ esperienza.immagine }}" class="card-img-top" alt="..." />
 
-          <ng-template #Prezzo>
             <div
               class="position-absolute d-flex justify-content-center align-items-center rounded-start prezzo-esperienza">
               <h5 class="m-0">
                 <b>€{{ esperienza.prezzo }}</b>
               </h5>
             </div>
+
           </ng-template>
+
         </div>
 
         <div class="card-body">
-          <!-- ⚙️modalità modifica per il Sottotitolo -->
-          <ng-container *ngIf="modifica===esperienza.key; else Sottotitolo">
+          <!-- ⚙️modalità modifica per il Sottotitolo, Titolo, Descrizione e Genere -->
+          <ng-container *ngIf="modifica===esperienza.key; else SottotitoloTitoloDescrizioneGenere">
             <input [(ngModel)]="esperienza.sottotitolo" class="mb-1">
-          </ng-container>
-          <!-- fino a qui ↖️ -->
-          <ng-template #Sottotitolo>
-            <p>{{esperienza.sottotitolo}}</p>
-          </ng-template>
-
-          <!-- ⚙️modalità modifica per il Titolo -->
-          <ng-container *ngIf="modifica===esperienza.key; else Titolo">
             <input [(ngModel)]="esperienza.titolo" class="mb-1">
-          </ng-container>
-          <!-- fino a qui ↖️ -->
-          <ng-template #Titolo>
-            <h5 class="card-title">{{ esperienza.titolo }}</h5>
-          </ng-template>
-
-          <!-- ⚙️modalità modifica per la Descrizione e Genere -->
-          <ng-container *ngIf="modifica===esperienza.key; else Descrizione">
             <input [(ngModel)]="esperienza.descrizione" class="mb-1">
             <input [(ngModel)]="esperienza.genere" class="mb-1">
           </ng-container>
           <!-- fino a qui ↖️ -->
 
-
-          <ng-template #Descrizione>
+          <ng-template #SottotitoloTitoloDescrizioneGenere>
+            <p>{{esperienza.sottotitolo}}</p>
+            <h5 class="card-title">{{ esperienza.titolo }}</h5>
             <p class="card-text">{{ esperienza.descrizione }}</p>
           </ng-template>
 
