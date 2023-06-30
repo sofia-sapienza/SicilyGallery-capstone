@@ -85,16 +85,16 @@
           <!-- fino a qui ↖️ -->
 
           <ng-template #SottotitoloTitoloDescrizioneGenere>
-            <p>{{esperienza.sottotitolo}}</p>
+            <p class="sottotitolo-card rounded">{{esperienza.sottotitolo}}</p>
             <h5 class="card-title">{{ esperienza.titolo }}</h5>
             <p class="card-text">{{ esperienza.descrizione }}</p>
           </ng-template>
 
-          <button (click)="eliminaEsperienza(esperienza.key)" type="button" class="btn btn-danger">
+          <button (click)="eliminaEsperienza(esperienza.key)" type="button" class="btn btn-danger btn-sm">
             <i class="bi bi-trash"></i> Elimina
           </button>
           <button *ngIf="modifica != esperienza.key" (click)="modifica = esperienza.key" type="button"
-            class="btn btn-secondary ms-1">
+            class="btn btn-secondary btn-sm ms-1">
             <i class="bi bi-gear"></i>Modifica
           </button>
           <!-- QUESTO APPARE SOLO IN MODALITÀ MODIFICA! -->
