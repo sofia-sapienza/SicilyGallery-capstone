@@ -1,6 +1,6 @@
-/* .container-fluid{
+.container-fluid{
   width: 100%;
-  height: 30rem;
+  height: 27rem;
 }
 
 .carosello{
@@ -9,14 +9,14 @@
 }
 
 .carousel-item{
-  height: 30rem;
+  height: 27rem;
 }
 
 .carousel-item img {
  width: 100%;
  height: 100%;
  object-fit: cover;
-} */
+}
 
 
 .btn-exsperience{
@@ -26,4 +26,42 @@
 
 .link-exsperience :hover{
   transform: scale(1.2);
+}
+
+//MEDIA QUERIES
+
+// 320px - 480px: Mobile Devices
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .container-fluid {
+    width: 100%;
+    height: 10rem;
+  }
+
+  .carousel-item {
+    height: 10rem;
+  }
+}
+
+// 481px - 768px: iPads, Tablets
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .container-fluid {
+    width: 100%;
+    height: 15rem;
+  }
+
+  .carousel-item {
+    height: 15rem;
+  }
+}
+
+// 769px - 1024px: Small screens, laptops
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container-fluid {
+    width: 100%;
+    height: 20rem;
+  }
+
+  .carousel-item {
+    height: 20rem;
+  }
 }
