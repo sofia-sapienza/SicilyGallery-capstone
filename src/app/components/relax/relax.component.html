@@ -58,26 +58,32 @@
 
         <!-- ⚙️modalità modifica per la card -->
         <ng-container *ngIf="modifica===esperienza.key; else cardCompleta">
-          <div class="form-floating ms-3 mt-1 mb-3">
-            <input type="url" class="form-control w-50" [(ngModel)]="esperienza.immagine">
+          <div class="form-floating ms-1 me-1 mt-1 mb-2">
+            <input type="url" class="form-control w-100" [(ngModel)]="esperienza.immagine">
             <label>Immagine</label>
           </div>
-          <div class="form-floating  ms-3 mb-3">
-            <input type="text" class="form-control w-50" [(ngModel)]="esperienza.titolo">
+          <div class="form-floating ms-1 me-1 mt-1 mb-2">
+            <input type="text" class="form-control w-100" [(ngModel)]="esperienza.titolo">
             <label>Titolo</label>
           </div>
-          <div class="form-floating  ms-3 mb-3">
-            <input type="text" class="form-control w-50" [(ngModel)]="esperienza.descrizione">
+          <div class="form-floating ms-1 me-1 mt-1 mb-2">
+            <input type="text" class="form-control w-100" [(ngModel)]="esperienza.descrizione">
             <label>Descrizione</label>
           </div>
-          <div class="form-floating  ms-3 mb-3">
-            <input type="text" class="form-control w-50" [(ngModel)]="esperienza.approfondimenti">
+          <div class="form-floating ms-1 me-1 mt-1 mb-2">
+            <input type="text" class="form-control w-100" [(ngModel)]="esperienza.approfondimenti">
             <label>Approfondimenti</label>
 
-            <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null"
-              class="btn btn-secondary w-50 mt-3">Salva modifica
-            </button>
           </div>
+          <select class="form-select ms-1 mb-2" aria-label="Default select example" [(ngModel)]="esperienza.genere">
+            <option selected>Seleziona il genere</option>
+            <option value="eat">eat</option>
+            <option value="play">play</option>
+            <option value="relax">relax</option>
+          </select>
+          <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null"
+            class="btn btn-secondary ms-1 me-1 btn-salvaMofifica">Salva modifica
+          </button>
         </ng-container>
         <!-- fino a qui ↖️ -->
 
@@ -86,7 +92,7 @@
           <div class="card-body">
             <h5 class="card-title">{{esperienza.titolo}}</h5>
             <p class="card-text">{{esperienza.descrizione}}</p>
-            <a class="btn btn-primary" href="{{esperienza.approfondimenti}}" role="button"><i
+            <a class="btn btn-primary" href="{{esperienza.approfondimenti}}" target="_blank" role="button"><i
                 class="bi bi-geo-alt-fill"></i> Indicazioni</a>
             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
 

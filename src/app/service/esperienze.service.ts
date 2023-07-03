@@ -43,7 +43,7 @@ export class EsperienzeService {
     // passo come parametri al metodo le key e l'oggetto
     key: string, esperienzaModificata: Experience): Promise<void> {
     return this.firedatabase
-      .object(`esperienze/${key}`) //viene utilizzato il metodo object() specidico di Firebase per ottenere un riferimento all'oggetto speficico
+      .object(`esperienze/${key}`) //viene utilizzato il metodo object() specifico di Firebase per ottenere un riferimento all'oggetto speficico
       .update(esperienzaModificata) // viene utilizzato il metodo update() specidico di Firebase per aggiornare l'oggetto del database con i valori forniti
       .then(() => {
         console.log('esperienza modificata con successo', esperienzaModificata);
