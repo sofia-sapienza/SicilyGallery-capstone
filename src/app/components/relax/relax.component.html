@@ -56,19 +56,27 @@
       <!-- inizio card -->
       <div class="card h-100">
 
-         <!-- ⚙️modalità modifica per la card -->
+        <!-- ⚙️modalità modifica per la card -->
         <ng-container *ngIf="modifica===esperienza.key; else cardCompleta">
-          <!-- <input type="url" class="w-50 mt-1 mb-1" [(ngModel)]="esperienza.immagine">
-          <input type="text" class="w-50 mb-1" [(ngModel)]="esperienza.titolo">
-          <input type="text"  class="w-50 mb-1" [(ngModel)]="esperienza.descrizione">
-          <input type="text"  class="w-50 mb-1" [(ngModel)]="esperienza.approfondimenti"> -->
-          <div class="form-floating ms-3 mb-3">
+          <div class="form-floating ms-3 mt-1 mb-3">
             <input type="url" class="form-control w-50" [(ngModel)]="esperienza.immagine">
-            <label for="floatingInput">Immagine</label>
+            <label>Immagine</label>
           </div>
           <div class="form-floating  ms-3 mb-3">
             <input type="text" class="form-control w-50" [(ngModel)]="esperienza.titolo">
             <label>Titolo</label>
+          </div>
+          <div class="form-floating  ms-3 mb-3">
+            <input type="text" class="form-control w-50" [(ngModel)]="esperienza.descrizione">
+            <label>Descrizione</label>
+          </div>
+          <div class="form-floating  ms-3 mb-3">
+            <input type="text" class="form-control w-50" [(ngModel)]="esperienza.approfondimenti">
+            <label>Approfondimenti</label>
+
+            <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null"
+              class="btn btn-secondary w-50 mt-3">Salva modifica
+            </button>
           </div>
         </ng-container>
         <!-- fino a qui ↖️ -->
@@ -82,7 +90,6 @@
                 class="bi bi-geo-alt-fill"></i> Indicazioni</a>
             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
 
-
             <!--button elimina e modifica -->
             <button (click)="eliminaEsperienza(esperienza.key)" type="button" class="btn btn-danger btn-sm">
               <i class="bi bi-trash"></i> Elimina
@@ -93,12 +100,6 @@
             </button>
           </div>
         </ng-template>
-        <!-- QUESTO APPARE SOLO IN MODALITÀ MODIFICA! -->
-        <ng-container *ngIf="modifica===esperienza.key">
-          <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null"
-            class="btn btn-sm btn-secondary w-50">Salva modifica</button>
-        </ng-container>
-        <!-- fino a qui ⬆️ -->
       </div>
     </div>
   </div>
