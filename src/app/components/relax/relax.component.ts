@@ -50,7 +50,7 @@ export class RelaxComponent implements OnInit {
   filtraEsperienze(): void {
     this.esperienzeFiltrate = this.esperienze.filter(
       (esperienza: Experience) => {
-        return esperienza.genere === 'play';
+        return esperienza.genere === 'relax';
       }
     );
   }

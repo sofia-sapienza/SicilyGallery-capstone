@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Immagine</b></p>
-        <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required />
+      <input type="text" id="immagine" name="immagine" [(ngModel)]="esperienza.immagine" required />
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Titolo</b></p>
@@ -24,7 +24,8 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Approfondimenti</b></p>
-      <input type="text" id="approfondimenti" name="approfondimenti" [(ngModel)]="esperienza.approfondimenti" required />
+      <input type="text" id="approfondimenti" name="approfondimenti" [(ngModel)]="esperienza.approfondimenti"
+        required />
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Prezzo</b></p>
@@ -42,6 +43,42 @@
 <div class="container-fluid mt-3 contenitore-video">
   <video src="../../../assets/video/relax.mp4" class="object-fit-cover" autoplay loop></video>
   <div class="container-titolo">
-    <h1 class="text-light"><b>Spiaggie da sogno, calette ed acque turchesi, senza contare il mare degli arcipelaghi</b></h1>
+    <h1 class="text-light"><b>Spiaggie da sogno, calette ed acque turchesi, senza contare il mare degli arcipelaghi</b>
+    </h1>
+  </div>
+</div>
+
+
+<!-- SPIAGGIE -->
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div *ngFor="let esperienza of esperienzeFiltrate" class="col-sm-12 col-md-6 pt-3">
+      <!-- inizio card -->
+      <div class="card h-100">
+        <img src="{{esperienza.immagine}}" class="card-img-top immagini-spiaggie" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{esperienza.titolo}}</h5>
+          <p class="card-text">{{esperienza.descrizione}}</p>
+          <p><a href="{{esperienza.approfondimenti}}" target="_blank" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i class="bi bi-geo-alt"></i> Google Maps</a></p>
+          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
+
+          <!--button elimina e modifica -->
+          <button (click)="eliminaEsperienza(esperienza.key)" type="button" class="btn btn-danger btn-sm">
+            <i class="bi bi-trash"></i> Elimina
+          </button>
+          <button *ngIf="modifica != esperienza.key" (click)="modifica = esperienza.key" type="button"
+            class="btn btn-secondary btn-sm ms-1">
+            <i class="bi bi-gear"></i>Modifica
+          </button>
+          <!-- QUESTO APPARE SOLO IN MODALITÀ MODIFICA! -->
+          <ng-container *ngIf="modifica===esperienza.key">
+            <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null"
+              class="btn btn-secondary ms-1">Salva modifica</button>
+          </ng-container>
+          <!-- fino a qui ⬆️ -->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
