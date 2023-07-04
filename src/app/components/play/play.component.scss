@@ -1,3 +1,4 @@
+// tabella aggiungi esperienze
 .select-genere{
   width: 65%;
 }
@@ -7,21 +8,7 @@
   width: 65%;
 }
 
-.card {
-  background-color: #fff9f6;
-  -webkit-box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.24);
-  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.24);
-}
-
-.prezzo-esperienza {
-  top: 0;
-  right: 0;
-  width: 20%;
-  height: 20%;
-  background-color: rgba(255, 255, 255, 0.588);
-  color: black;
-}
-
+// banner con video
 .contenitore-video{
   padding: 0;
   width: 100%;
@@ -43,11 +30,28 @@
  width: 90%;
 }
 
+// card escursioni
+.card {
+  background-color: #fff9f6;
+  -webkit-box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.24);
+  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.24);
+}
+
+.prezzo-esperienza {
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 20%;
+  background-color: rgba(255, 255, 255, 0.588);
+  color: black;
+}
+
 .sottotitolo-card{
   background-color: #ffde59e9;
   padding: 0 0.2em 0 0.2em;
 }
 
+// form che appare in modalità modifica
 .form-select{
   width: 97%;
 }
