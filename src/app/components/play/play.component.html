@@ -20,7 +20,12 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Genere</b></p>
-      <input type="text" id="genere" name="genere" [(ngModel)]="esperienza.genere" required />
+      <!-- <input type="text" id="genere" name="genere" [(ngModel)]="esperienza.genere" required /> -->
+      <select class="select-genere" [(ngModel)]="esperienza.genere">
+        <option value="eat">eat</option>
+        <option value="play">play</option>
+        <option value="relax">relax</option>
+      </select>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
       <p class="mb-0"><b>Approfondimenti</b></p>
