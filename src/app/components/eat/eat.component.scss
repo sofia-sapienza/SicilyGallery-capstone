@@ -29,3 +29,24 @@
  width: 90%;
  font-family: 'DM Serif Display', serif;
 }
+
+// card escursioni
+.card {
+  background-color: #fff9f6;
+  -webkit-box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.24);
+  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.24);
+}
+
+.immagini-card{
+  aspect-ratio: 1.5/1;
+  object-fit: fit;
+}
+
+.card-title{
+  font-family: 'DM Serif Display', serif;
+}
+
+.sottotitolo-card{
+  background-color: #cb3234d2;
+  padding: 0.1em 0.2em 0.1em 0.2em;
+}

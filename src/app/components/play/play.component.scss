@@ -42,6 +42,10 @@
   object-fit: fit;
 }
 
+.card-title{
+  font-family: 'DM Serif Display', serif;
+}
+
 .prezzo-esperienza {
   top: 0;
   right: 0;
@@ -53,7 +57,7 @@
 
 .sottotitolo-card{
   background-color: #ffde59e9;
-  padding: 0 0.2em 0 0.2em;
+  padding: 0.1em 0.2em 0.1em 0.2em;
 }
 
 // form che appare in modalità modifica
