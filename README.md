@@ -1,10 +1,16 @@
-# SicilyGalleryCapstone
+# :it: Sicily Gallery - Capstone Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
+Ho pensato a Sicily Gallery come una guida turistica intuitiva e completa che permette di scoprire le meraviglie dell'isola Siciliana. Con quest'app potrai esplorare facilmente i migliori ristoranti, le impedibili escursioni e le incatevoli spiaggie della Sicilia.
 
-## Development server
+## Caratteristiche principali
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- :fork_and_knife: Ristoranti: Trova i migliori ristoranti tradizionali, locali nascoti e ristoranti gourmet in tutta l'isola. Scopri le specialità culinarie siciliane e prenota il tuo tavolo.
+- :volcano: Escursioni: Pianifica avventure emozionanti attraverso i paesaggi mozzafiato della Sicilia. 
+- :beach_umbrella: Spiaggie: Trova le spiaggie più belle e suggestive in tutta la Sicilia. Scopri le caratteristiche di ogni spiaggia e ottieni indicazioni precise per raggiungerle.
+
+:bust_in_silhouette: **Gestione delle Esperienze (solo per gli admin):** Gli utenti admin hanno la possibilità di gestire le esperienze turistiche. Possono aggiungere, modificare ed eliminare ristoranti, escursioni e spiagge dall'app per assicurare che le informazioni siano sempre aggiornate e pertinenti.
+
+Sicily Gallery ti offre una panoramica completa delle attrazioni più interessanti dell'isola, consentendoti di pianificare al meglio la tua visita e sfruttare al massimo la tua esperienza in Sicilia.
 
 ## Code scaffolding
 
