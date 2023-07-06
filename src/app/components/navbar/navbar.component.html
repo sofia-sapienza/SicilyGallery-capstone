@@ -23,12 +23,15 @@
         </li>
       </ul>
       <!-- Questo si dovrà vedere solo senza login ⬇️ -->
+      <ng-template #btnLogin>
       <i class="bi bi-person-circle icon-user me-2"></i>
       <a class="btn btn-login" [routerLink]="['/login']" role="button">Login</a>
-
+      </ng-template>
       <!-- Questo si dovrà vedere solo dopo aver fatto il login ⬇️ -->
+      <ng-container *ngIf="isUtenteLoggato(); else btnLogin">
       <i class="bi bi-person-circle icon-user me-2"></i>
       <button (click)="logout()" class="btn btn-danger" type="submit">Logout</button>
+      </ng-container>
     </div>
   </div>
 </nav>
