@@ -9,9 +9,11 @@ import { Router } from '@angular/router'; // importo il Router
 export class AuthService {
   constructor(
     private authSrv: AngularFireAuth,
-    private firebase: AngularFireDatabase
+    private firebase: AngularFireDatabase,
+    private router: Router
   ) {}
 
+  //REGISTRAZIONE
   async register(
     email: string,
     password: string,
@@ -33,15 +35,18 @@ export class AuthService {
     }
   }
 
+  //LOGIN
   async login(email: string, password: string) {
     try {
       await this.authSrv.signInWithEmailAndPassword(email, password);
       console.log('Login effettuato');
     } catch (error) {
       console.error('Errore nel login', error);
+      throw error; // Aggiungi questa riga per rilanciare l'errore
     }
   }
 
+  //LOGOUT
   async logout() {
     try {
       await this.authSrv.signOut();

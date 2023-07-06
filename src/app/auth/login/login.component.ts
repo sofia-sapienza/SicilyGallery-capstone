@@ -20,6 +20,11 @@ export class LoginComponent implements OnInit {
     .then(() => {
       console.log('Logged in successfully');
       this.router.navigate(['/']);
+    })
+    .catch(() => {
+      alert('Ops, non sei registrato');
+      this.router.navigate(['/register']);
     });
+
   }
 }
