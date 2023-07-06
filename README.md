@@ -8,7 +8,7 @@ Ho pensato a Sicily Gallery come una guida turistica intuitiva e completa che pe
 - :volcano: Escursioni: Pianifica avventure emozionanti attraverso i paesaggi mozzafiato della Sicilia. 
 - :beach_umbrella: Spiaggie: Trova le spiaggie più belle e suggestive in tutta la Sicilia. Scopri le caratteristiche di ogni spiaggia e ottieni indicazioni precise per raggiungerle.
 
-**Gestione delle Esperienze (solo per gli admin):** Gli utenti admin hanno la possibilità di gestire le esperienze turistiche. Possono aggiungere, modificare ed eliminare ristoranti, escursioni e spiagge dall'app per assicurare che le informazioni siano sempre aggiornate e pertinenti.
+:bust_in_silhouette: **Gestione delle Esperienze (solo per gli admin):** Gli utenti admin hanno la possibilità di gestire le esperienze turistiche. Possono aggiungere, modificare ed eliminare ristoranti, escursioni e spiagge dall'app per assicurare che le informazioni siano sempre aggiornate e pertinenti.
 
 Sicily Gallery ti offre una panoramica completa delle attrazioni più interessanti dell'isola, consentendoti di pianificare al meglio la tua visita e sfruttare al massimo la tua esperienza in Sicilia.
 
