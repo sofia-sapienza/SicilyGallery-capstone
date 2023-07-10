@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { AngularFireDatabase } from '@angular/fire/compat/database';//❗import
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
