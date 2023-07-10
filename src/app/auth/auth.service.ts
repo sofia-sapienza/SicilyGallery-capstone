@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth'; // importo
-import { AngularFireDatabase } from '@angular/fire/compat/database'; // importp
+import { AngularFireDatabase } from '@angular/fire/compat/database'; // importo
 import { Router } from '@angular/router'; // importo il Router
+import { switchMap, of } from 'rxjs'; //❗importo
+
 
 @Injectable({
   providedIn: 'root',
@@ -61,5 +63,28 @@ export class AuthService {
     } catch (error) {
       console.error('Errore nella logout', error);
     }
+  }
+
+   //GET UTENTE E MI RESTITUISCE L'UTENTE COLLEGATO
+   getUserData() {
+    return this.authSrv.authState.pipe(
+      switchMap((user) => {
+        if (user) {
+          return this.firebase
+            .object(`/users/${user.uid}`)
+            .valueChanges()
+            .pipe(
+              switchMap((userData) => {
+                const userDataWithUid = Object.assign({}, userData, {
+                  uid: user.uid,
+                });
+                return of(userDataWithUid);
+              })
+            );
+        } else {
+          return of(null);
+        }
+      })
+    );
   }
 }
