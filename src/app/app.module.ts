@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { EsperienzeService } from './service/esperienze.service';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Route[] = [ //creo una costante di :tipo Route per definire le rotte
@@ -33,14 +34,18 @@ const routes: Route[] = [ //creo una costante di :tipo Route per definire le rot
   {
     path: 'eat',
     component: EatComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'play',
     component: PlayComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'relax',
     component: RelaxComponent,
+    canActivate: [AuthGuard]
   }
 ]
 
