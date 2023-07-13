@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EsperienzeService } from 'src/app/service/esperienze.service'; // importo il service
 import { Experience } from 'src/app/models/experience.interface'; // importo l'interfaccia
+import { EsperienzeService } from 'src/app/service/esperienze.service'; // importo il service
+import { AuthService } from 'src/app/auth/auth.service'; // importo l'auth.service per gestire la visualizzazione degli elementi in base all'Admin
 
 @Component({
   selector: 'app-relax',
@@ -13,7 +14,7 @@ export class RelaxComponent implements OnInit {
   esperienzeFiltrate: Experience[] = []; // inizializzo una variabile ti tipo: Interfaccia che mi riempirò con le esperienze filtrates
   modifica: string | null = null; // variabile che ci serve per la modalità modifica
 
-  constructor(private esperienzeSrv : EsperienzeService) { }
+  constructor(private esperienzeSrv : EsperienzeService, public authSrv: AuthService) { }
 
   esperienza = {
     key: '',

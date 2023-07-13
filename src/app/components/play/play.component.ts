@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/models/experience.interface'; // importo l'interfaccia
 import { EsperienzeService } from 'src/app/service/esperienze.service'; // importo il service
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthService } from 'src/app/auth/auth.service'; // importo l'auth.service per gestire la visualizzazione degli elementi in base all'Admin
 
 @Component({
   selector: 'app-play',

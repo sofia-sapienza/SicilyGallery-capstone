@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/models/experience.interface'; // importo l'interfaccia
 import { EsperienzeService } from 'src/app/service/esperienze.service'; // importo il service
-import { AuthService } from 'src/app/auth/auth.service'; // import di prova ❗
+import { AuthService } from 'src/app/auth/auth.service'; // importo l'auth.service per gestire la visualizzazione degli elementi in base all'Admin
 @Component({
   selector: 'app-eat',
   templateUrl: './eat.component.html',
@@ -67,5 +67,4 @@ export class EatComponent implements OnInit {
         console.error("errore durante l'eliminazione dell'esperienza", error);
       });
   }
-
 }
