@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/models/experience.interface'; // importo l'interfaccia
 import { EsperienzeService } from 'src/app/service/esperienze.service'; // importo il service
-import { AngularFireDatabase } from '@angular/fire/compat/database'; // import di prova ❗
-import { AngularFireAuth } from '@angular/fire/compat/auth'; // import di prova ❗
 import { AuthService } from 'src/app/auth/auth.service'; // import di prova ❗
 @Component({
   selector: 'app-eat',
@@ -16,9 +14,7 @@ export class EatComponent implements OnInit {
 
   constructor(
     private esperienzeSrv: EsperienzeService,
-    private firebase: AngularFireDatabase,
-    private authSrv: AngularFireAuth,
-    public authService: AuthService
+    public authSrv: AuthService
   ) {}
 
   esperienza = {
