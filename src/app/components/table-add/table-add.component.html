@@ -1,0 +1,47 @@
+<!-- TABELLA AGGIUNGI ESPERIENZE -->
+<!-- apparirà solo un modalità admin -->
+<div class="container-fluid pb-2 border-bottom" *ngIf="authSrv.isAdmin()">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Immagine</b></p>
+      <input type="text" id="immagine" name="immagine" class="w-50" [(ngModel)]="esperienza.immagine" required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Titolo</b></p>
+      <input type="text" id="titolo" name="titolo" class="w-50" [(ngModel)]="esperienza.titolo" required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Sottotitolo</b></p>
+      <input type="text" id="sottotitolo" name="sottotitolo" class="w-50" [(ngModel)]="esperienza.sottotitolo"
+        required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Descrizione</b></p>
+      <input type="text" id="descrizione" name="descrizione" class="w-50" [(ngModel)]="esperienza.descrizione"
+        required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Genere</b></p>
+      <!-- <input type="text" id="genere" name="genere" [(ngModel)]="esperienza.genere" required /> -->
+      <select class="select-genere" [(ngModel)]="esperienza.genere">
+        <option value="eat">eat</option>
+        <option value="play">play</option>
+        <option value="relax">relax</option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Approfondimenti</b></p>
+      <input type="text" id="approfondimenti" name="approfondimenti" class="w-50"
+        [(ngModel)]="esperienza.approfondimenti" required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
+      <p class="mb-0"><b>Prezzo</b></p>
+      <input type="number" id="prezzo" name="prezzo" class="w-50" [(ngModel)]="esperienza.prezzo" required />
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mt-2 d-flex align-items-end">
+      <button (click)="addEsperienza()" type="button" class="btn btn-sm text-light btn-addEsperienza">
+        Aggiungi Esperienza
+      </button>
+    </div>
+  </div>
+</div>

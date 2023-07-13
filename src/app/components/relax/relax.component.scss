@@ -1,31 +1,22 @@
-.select-genere, .btn-addEsperienza{
-  width: 50%;
-}
-
-.btn-addEsperienza {
-  background-color: #cb3234;
-}
-
-.contenitore-video{
+.contenitore-video {
   padding: 0;
   width: 100%;
   height: 25rem;
   position: relative;
-
 }
-.contenitore-video video{
+.contenitore-video video {
   width: 100%;
   height: 100%;
 }
 
-.container-titolo{
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- text-align: center;
- width: 90%;
- font-family: 'DM Serif Display', serif;
+.container-titolo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  font-family: "DM Serif Display", serif;
 }
 
 .card {
@@ -34,12 +25,12 @@
   box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.24);
 }
 
-.immagini-spiaggie{
+.immagini-spiaggie {
   width: 100%;
   height: 20rem;
   object-fit: cover;
 }
 
-.form-select{
+.form-select {
   width: 98.5%;
 }

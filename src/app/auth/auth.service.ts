@@ -10,15 +10,20 @@ import { switchMap, of } from 'rxjs'; //❗importo
 })
 export class AuthService {
  private utenteLoggato: boolean = false; // Inizzializzo una variabile utenteLoggato a 'false' per gestire la visualizzazione dei bottoni Login e Logout
+ public Admin: boolean = false; // Inizzializzo una variabile isAdmin a false per gestire il ruolo all'iterno dell'app
 
   constructor(
-    private authSrv: AngularFireAuth,
+    public authSrv: AngularFireAuth,
     private firebase: AngularFireDatabase,
     private router: Router
   ) {}
 
   isUtenteLoggato(): boolean {
     return this.utenteLoggato;
+  }
+
+  isAdmin(): boolean {
+    return this.Admin;
   }
 
   //REGISTRAZIONE
@@ -49,6 +54,11 @@ export class AuthService {
       await this.authSrv.signInWithEmailAndPassword(email, password);
       this.utenteLoggato = true;
       console.log('Login effettuato');
+      this.authSrv.authState.subscribe(user => {
+        if (user && user.uid === 'sBOP1ryRXaX12a9rnoQ3lmOQJy32') {
+          this.Admin = true;
+        }
+      });
     } catch (error) {
       console.error('Errore nel login', error);
       throw error; // Aggiungi questa riga per rilanciare l'errore

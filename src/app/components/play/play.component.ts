@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/models/experience.interface'; // importo l'interfaccia
 import { EsperienzeService } from 'src/app/service/esperienze.service'; // importo il service
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-play',
@@ -12,7 +13,7 @@ export class PlayComponent implements OnInit {
   esperienzeFiltrate: Experience[] = []; // inizializzo una variabile ti tipo: Interfaccia che mi riempirò con le esperienze filtrate
   modifica: string | null = null; // variabile che ci serve per la modalità modifica
 
-  constructor(private esperienzeSrv: EsperienzeService) {}
+  constructor(private esperienzeSrv: EsperienzeService, public authSrv: AuthService) {}
 
   esperienza = {
     key: '',
@@ -30,19 +31,6 @@ export class PlayComponent implements OnInit {
       this.esperienze = data;
       this.filtraEsperienze();
     });
-  }
-
-  // METODO AGGIUNGI ESPERIENZA
-  addEsperienza(): void {
-    this.esperienzeSrv
-      .addEsperienza(this.esperienza)
-      .then(() => {
-        console.log('esperienza aggiunta con successo', this.esperienza);
-        this.resetForm();
-      })
-      .catch((error) => {
-        console.error('esperienza non aggiunta con successo', error);
-      });
   }
 
   //METODO PER FILTRARE L'ESPERIENZA
@@ -78,17 +66,4 @@ export class PlayComponent implements OnInit {
       });
   }
 
-  // METODO CHE SVUOTA IL FORM
-  resetForm(): void {
-    this.esperienza = {
-      key: '',
-      genere: '',
-      immagine: '',
-      titolo: '',
-      sottotitolo: '',
-      descrizione: '',
-      prezzo: 0,
-      approfondimenti: '',
-    };
-  }
 }

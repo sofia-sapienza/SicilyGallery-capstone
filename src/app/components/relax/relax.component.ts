@@ -33,19 +33,6 @@ export class RelaxComponent implements OnInit {
     });
   }
 
-  // METODO AGGIUNGI ESPERIENZA
-  addEsperienza(): void {
-    this.esperienzeSrv
-      .addEsperienza(this.esperienza)
-      .then(() => {
-        console.log('esperienza aggiunta con successo', this.esperienza);
-        this.resetForm();
-      })
-      .catch((error) => {
-        console.error('esperienza non aggiunta con successo', error);
-      });
-  }
-
   //METODO PER FILTRARE L'ESPERIENZA
   filtraEsperienze(): void {
     this.esperienzeFiltrate = this.esperienze.filter(
@@ -79,18 +66,5 @@ export class RelaxComponent implements OnInit {
       });
   }
 
-  // METODO CHE SVUOTA IL FORM
-  resetForm(): void {
-    this.esperienza = {
-      key: '',
-      genere: '',
-      immagine: '',
-      titolo: '',
-      sottotitolo: '',
-      descrizione: '',
-      prezzo: 0,
-      approfondimenti: '',
-    };
-  }
 }
 
