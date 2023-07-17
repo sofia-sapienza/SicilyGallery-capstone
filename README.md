@@ -17,7 +17,8 @@ Sicily Gallery ti offre una panoramica completa delle attrazioni più interessan
 Questo progetto è stato generato con [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11. quindi prima di iniziare assicurati di aver installato anche **Node.js** sul tuo sistema.
 
 - Clona questa repository sul tuo computer utilizzando il seguente comando:
-`git clone https://github.com/sofia-sapienza/sicily-gallery.git`
+`git clone https://github.com/sofia-sapienza/sicily-gallery.git`.
+
 Per rendere l'operazione più veloce puoi eseguire il comando direttamente nel terminale di Visual Studio Code, aprendo prima la cartella dove vuoi che sarà clonata la repository.
 
 - Per installare tutti le dipende necessarie affinché il progetto funzioni esegui il comando:
