@@ -15,6 +15,9 @@ Sicily Gallery ti offre una panoramica completa delle attrazioni più interessan
 ## Installazione
 
 Questo progetto è stato generato con [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11. quindi prima di iniziare assicurati di aver installato anche **Node.js** sul tuo sistema.
+Clona questa repository sul tuo computer utilizzando il seguente comando:
+`git clone https://github.com/sofia-sapienza/sicily-gallery.git`
+
 
 
 ## Build
