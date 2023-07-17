@@ -18,8 +18,7 @@ Questo progetto è stato generato con [Angular CLI](https://github.com/angular/a
 
 - Clona questa repository sul tuo computer utilizzando il seguente comando:
 `git clone https://github.com/sofia-sapienza/sicily-gallery.git`.
-
-Per rendere l'operazione più veloce puoi eseguire il comando direttamente nel terminale di Visual Studio Code, aprendo prima la cartella dove vuoi che sarà clonata la repository.
+ Per rendere l'operazione più veloce puoi eseguire il comando direttamente nel terminale di Visual Studio Code, aprendo prima la cartella dove vuoi che venga clonata la repository.
 
 - Per installare tutti le dipende necessarie affinché il progetto funzioni esegui il comando:
 `npm i install`
