@@ -35,22 +35,3 @@ ho ulitizzato ng-boostrap per far collassare correttamente la navbar sui disposi
 - Per avviare l'applicazione in modalità di sviluppo locale esegui il comando:
 `ng serve`
 Apri il tuo browser e visita http://localhost:4200/. L'applicazione verrà caricata automaticamente e dovresti essere pronto per esplorare le meraviglie della Sicilia con Sicily Gallery!
-
-
-
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
