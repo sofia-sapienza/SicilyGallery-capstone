@@ -21,7 +21,7 @@ Questo progetto è stato generato con [Angular CLI](https://github.com/angular/a
  Per rendere l'operazione più veloce puoi eseguire il comando direttamente nel terminale di Visual Studio Code, aprendo prima la cartella dove vuoi che venga clonata la repository.
 
 - Per installare tutti le dipende necessarie affinché il progetto funzioni esegui il comando:
-`npm i install`
+`npm install`
 In particolare, come dipendenze esterne verranno installate:
 ```
 "@angular/fire": "^7.6.1",
