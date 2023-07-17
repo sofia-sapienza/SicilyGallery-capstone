@@ -22,6 +22,13 @@ Questo progetto è stato generato con [Angular CLI](https://github.com/angular/a
 
 - Per installare tutti le dipende necessarie affinché il progetto funzioni esegui il comando:
 `npm i install`
+In particolare, come dipendenze esterne verranno installate:
+```
+"@angular/fire": "^7.6.1",
+"@angular/localize": "^14.2.0",
+"@ng-bootstrap/ng-bootstrap": "^13.0.0",
+"firebase": "^9.22.2"
+```
 
 - Per avviare l'applicazione in modalità di sviluppo locale esegui il comando:
 `ng serve`
