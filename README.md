@@ -12,9 +12,10 @@ Ho pensato a Sicily Gallery come una guida turistica intuitiva e completa che pe
 
 Sicily Gallery ti offre una panoramica completa delle attrazioni più interessanti dell'isola, consentendoti di pianificare al meglio la tua visita e sfruttare al massimo la tua esperienza in Sicilia.
 
-## Code scaffolding
+## Installazione
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Questo progetto è stato generato con [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11. quindi prima di iniziare assicurati di aver installato anche **Node.js**.
+
 
 ## Build
 
