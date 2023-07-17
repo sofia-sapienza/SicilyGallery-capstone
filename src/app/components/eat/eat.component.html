@@ -51,14 +51,23 @@
             <p class="sottotitolo-card text-light fw-semibold rounded">{{esperienza.sottotitolo}}</p>
             <h5 class="card-title">{{esperienza.titolo}}</h5>
             <p class="card-text">{{esperienza.descrizione}}</p>
-            <!-- button elimina e modifica -->
-            <button *ngIf="authSrv.isAdmin()" (click)="eliminaEsperienza(esperienza.key)" type="button" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash"></i> Elimina
-            </button>
-            <button *ngIf="authSrv.isAdmin()" (click)="modifica = esperienza.key" type="button"
-              class="btn btn-secondary btn-sm ms-1">
-              <i class="bi bi-gear"></i>Modifica
-            </button>
+            <div class="d-flex flex-column">
+              <div class="mb-1">
+                <!-- button Scopri di più! -->
+                <button type="button" class="btn btn-primary">Scopri di più!</button>
+              </div>
+              <div>
+                <!-- button elimina e modifica -->
+                <button *ngIf="authSrv.isAdmin()" (click)="eliminaEsperienza(esperienza.key)" type="button"
+                  class="btn btn-danger btn-sm">
+                  <i class="bi bi-trash"></i> Elimina
+                </button>
+                <button *ngIf="authSrv.isAdmin()" (click)="modifica = esperienza.key" type="button"
+                  class="btn btn-secondary btn-sm ms-1">
+                  <i class="bi bi-gear"></i>Modifica
+                </button>
+              </div>
+            </div>
           </div>
         </ng-template>
       </div>

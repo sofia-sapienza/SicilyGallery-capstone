@@ -66,6 +66,8 @@
           <p class="sottotitolo-card fw-semibold rounded">{{esperienza.sottotitolo}}</p>
           <h5 class="card-title">{{ esperienza.titolo }}</h5>
           <p class="card-text">{{ esperienza.descrizione }}</p>
+          <!-- button Scopri di più! -->
+          <button type="button" class="btn btn-primary">Scopri di più</button>
 
           <!-- button elimina e modifica -->
           <button *ngIf="authSrv.isAdmin()" (click)="eliminaEsperienza(esperienza.key)" type="button" class="btn btn-danger btn-sm">
