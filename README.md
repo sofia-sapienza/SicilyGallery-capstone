@@ -30,7 +30,7 @@ In particolare, come dipendenze esterne verranno installate:
 "firebase": "^9.22.2"
 ```
 in quanto per il database mi sono appoggiata al sistema di *Realtime Database* offerto da Firebase e per l'autenticazione degli untenti al suo sistema di *Authentication*,
-ho ulitizzato ng-boostrap per far collassare correttamente la navbar sui dispositivi mobile.
+ho ulitizzato *ng-boostrap* per far collassare correttamente la navbar sui dispositivi mobile.
 
 - Per avviare l'applicazione in modalità di sviluppo locale esegui il comando:
 `ng serve`
