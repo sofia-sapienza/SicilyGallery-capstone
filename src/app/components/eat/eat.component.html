@@ -41,8 +41,12 @@
             <option value="play">play</option>
             <option value="relax">relax</option>
           </select>
+          <div class="form-floating ms-1 me-1 mt-1 mb-2">
+            <input type="text" class="form-control w-100" [(ngModel)]="esperienza.approfondimenti">
+            <label>Approfondimenti</label>
+          </div>
           <button (click)="modificaEsperienza(esperienza.key, esperienza); modifica=null"
-            class="btn btn-secondary ms-1">Salva modifica</button>
+            class="btn btn-secondary ms-1 me-1">Salva modifica</button>
         </ng-container>
 
         <ng-template #cardCompleta>
@@ -50,7 +54,7 @@
           <div class="card-body">
             <p class="sottotitolo-card text-light fw-semibold rounded">{{esperienza.sottotitolo}}</p>
             <h5 class="card-title">{{esperienza.titolo}}</h5>
-            <p class="card-text">{{esperienza.descrizione}}</p>
+            <p class="card-text truncate-text">{{esperienza.descrizione}}</p>
             <div class="d-flex flex-column">
               <div class="mb-1">
                 <!-- button Scopri di più! -->

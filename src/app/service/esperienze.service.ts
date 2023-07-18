@@ -14,7 +14,7 @@ export class EsperienzeService {
     return this.firedatabase.list('esperienze').valueChanges();
   }
 
-   // Metodo per recuperare un'esperienza specifica in base alla chiave
+  //METODO PER RECUPERARE UN ESPERIENZA SPECIFICA IN BASE ALLE KEY GENERATA DA FIREBASE
    getExperienceByKey(key: string): Observable<Experience> {
     // Utilizza il metodo object() di AngularFireDatabase per ottenere un riferimento al percorso Firebase dell'esperienza
     const experienceRef = this.firedatabase.object(`/esperienze/${key}`);

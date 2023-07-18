@@ -36,7 +36,7 @@ const routes: Route[] = [ //creo una costante di :tipo Route per definire le rot
   {
     path: 'eat',
     component: EatComponent,
-    canActivate: [AuthGuard]
+    /* canActivate: [AuthGuard] */
   },
   {
     path: 'play',

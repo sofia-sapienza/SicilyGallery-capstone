@@ -1,4 +1,14 @@
-<div class="container">
-  Titolto esperienza
-  <h1>{{esperienza.titolo}}</h1>
+<div class="container-fluid p-0">
+  <div class="row mt-3 mx-0">
+    <div class="col-sm-12 col-lg-6">
+      <h1>{{esperienza.titolo}}</h1>
+      <h5 class="fw-semibold">{{esperienza.sottotitolo}}</h5>
+      <p class="fs-6 lh-sm">{{esperienza.descrizione}}</p>
+      <a class="btn btn-primary" href="{{esperienza.approfondimenti}}" target="_blank" role="button"><i
+        class="bi bi-geo-alt-fill"></i> Indicazioni</a>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+      <img src="{{esperienza.immagine}}" alt="" class="rounded-start">
+    </div>
+  </div>
 </div>

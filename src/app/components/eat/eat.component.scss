@@ -40,3 +40,17 @@
   background-color: #cb3234d2;
   padding: 0.1em 0.2em 0.1em 0.2em;
 }
+
+.truncate-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3; /* Numero massimo di righe da visualizzare prima di troncare il testo */
+}
+
+
+// form che appare in modalità modifica
+.form-select {
+  width: 97%;
+}
