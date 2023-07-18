@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { EsperienzeService } from './service/esperienze.service';
 import { AuthGuard } from './auth/auth.guard';
 import { TableAddComponent } from './components/table-add/table-add.component';
+import { InfoEsperienzaComponent } from './components/info-esperienza/info-esperienza.component';
 
 
 const routes: Route[] = [ //creo una costante di :tipo Route per definire le rotte
@@ -47,6 +48,10 @@ const routes: Route[] = [ //creo una costante di :tipo Route per definire le rot
     path: 'relax',
     component: RelaxComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'info-esperienza/:key',
+    component: InfoEsperienzaComponent,
   }
 ]
 
@@ -60,7 +65,8 @@ const routes: Route[] = [ //creo una costante di :tipo Route per definire le rot
     RelaxComponent,
     LoginComponent,
     RegisterComponent,
-    TableAddComponent
+    TableAddComponent,
+    InfoEsperienzaComponent
   ],
   imports: [
     BrowserModule,
