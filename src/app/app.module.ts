@@ -18,6 +18,7 @@ import { EsperienzeService } from './service/esperienze.service';
 import { AuthGuard } from './auth/auth.guard';
 import { TableAddComponent } from './components/table-add/table-add.component';
 import { InfoEsperienzaComponent } from './components/info-esperienza/info-esperienza.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const routes: Route[] = [ //creo una costante di :tipo Route per definire le rotte
@@ -66,7 +67,8 @@ const routes: Route[] = [ //creo una costante di :tipo Route per definire le rot
     LoginComponent,
     RegisterComponent,
     TableAddComponent,
-    InfoEsperienzaComponent
+    InfoEsperienzaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
