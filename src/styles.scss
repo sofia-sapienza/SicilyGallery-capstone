@@ -3,8 +3,30 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Assistant&family=DM+Serif+Display&display=swap');
+
 body{
   font-family: 'Assistant', sans-serif;
   font-size: 0.8em;
   line-height: 1.2em;
 }
+
+
+// A TUTTE LE CARD LA CON CLASSE card-focus
+.card-focus {
+  position: relative;
+  overflow: hidden; /* Nasconde eventuali elementi sovrapposti alla card */
+  transition: box-shadow 0.3s ease; /* Aggiunge una transizione all'ombra della card */
+}
+
+.card-focus:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombra quando il cursore è sopra la card */
+}
+
+.card-focus img.card-img-top {
+  transition: transform 0.3s ease; /* Aggiunge una transizione all'ingrandimento dell'immagine */
+}
+
+.card-focus:hover img.card-img-top {
+  transform: scale(1.05); /* Ingrandisce l'immagine quando il cursore è sopra la card */
+}
+

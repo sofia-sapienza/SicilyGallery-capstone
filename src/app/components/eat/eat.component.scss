@@ -25,25 +25,6 @@
   background-color: #fff9f6;
 }
 
-.card-completa {
-  position: relative;
-  overflow: hidden; /* Nasconde eventuali elementi sovrapposti alla card */
-  transition: box-shadow 0.3s ease; /* Aggiunge una transizione all'ombra della card */
-}
-
-.card-completa:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombra quando il cursore è sopra la card */
-}
-
-.card-completa img.card-img-top {
-  transition: transform 0.3s ease; /* Aggiunge una transizione all'ingrandimento dell'immagine */
-}
-
-.card-completa:hover img.card-img-top {
-  transform: scale(1.05); /* Ingrandisce l'immagine quando il cursore è sopra la card */
-}
-
-
 .immagini-card {
   aspect-ratio: 1.5/1;
   object-fit: fit;
